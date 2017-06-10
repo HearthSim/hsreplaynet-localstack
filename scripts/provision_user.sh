@@ -43,6 +43,7 @@ python "$HSREPLAYNET/manage.py" migrate --no-input
 python "$HSREPLAYNET/manage.py" load_cards
 python "$PROJECTDIR/scripts/initdb.py"
 
+influx --execute "create database hdt"
 influx --execute "create database hsreplaynet"
 influx --execute "create database joust"
 
