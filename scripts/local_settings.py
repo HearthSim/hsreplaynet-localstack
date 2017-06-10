@@ -45,6 +45,7 @@ CACHES = {
 
 STRIPE_LIVE_MODE = False
 STRIPE_TEST_SECRET_KEY = "sk_test_"
+DJSTRIPE_USE_NATIVE_JSONFIELD = True
 
 MONTHLY_PLAN_ID = "hearthsim-pro-monthly"
 SEMIANNUAL_PLAN_ID = "hearthsim-pro-semiannual"
