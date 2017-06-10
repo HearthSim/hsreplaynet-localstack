@@ -28,7 +28,7 @@ cd "$HSREPLAYNET" || exit
 yarn install --modules-folder "$NODE_MODULES" --pure-lockfile --no-progress
 
 if [[ ! -e $HSREPLAYNET/hsreplaynet/local_settings.py ]]; then
-	cp "$HSREPLAYNET/local_settings.example.py" "$HSREPLAYNET/hsreplaynet/local_settings.py"
+	cp "$PROJECTDIR/scripts/local_settings.py" "$HSREPLAYNET/hsreplaynet/local_settings.py"
 fi
 
 createdb --username postgres hsreplaynet
