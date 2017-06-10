@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Install apt https support first
 dpkg -s apt-transport-https &>/dev/null || {
 	apt-get update -q
