@@ -32,6 +32,7 @@ if [[ ! -e $HSREPLAYNET/hsreplaynet/local_settings.py ]]; then
 fi
 
 createdb --username postgres hsreplaynet
+createdb --username postgres uploads
 python "$HSREPLAYNET/manage.py" migrate --no-input
 python "$HSREPLAYNET/manage.py" load_cards
 python "$PROJECTDIR/scripts/initdb.py"

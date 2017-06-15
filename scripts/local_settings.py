@@ -17,8 +17,19 @@ DATABASES = {
 		"PASSWORD": "",
 		"HOST": "",
 		"PORT": "",
+	},
+	"uploads": {
+		"ENGINE": "django.db.backends.postgresql",
+		"NAME": "uploads",
+		"USER": "postgres",
+		"PASSWORD": "",
+		"HOST": "",
+		"PORT": "",
 	}
 }
+
+UPLOADS_DB = "uploads"
+DATABASE_ROUTERS = ["hsreplaynet.utils.routers.UploadEventsRouter"]
 
 
 # Cache (django-redis-cache)
