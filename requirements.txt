@@ -1,0 +1,24 @@
+# development tools
+q
+requests
+
+# AWS tools
+awscli
+boto3
+
+# tests
+flake8
+isort
+pytest
+tox
+yapf
+
+# Django utilities
+django-debug-toolbar
+django-sslserver
+
+# runserver_plus and its dependencies
+django-extensions
+pyOpenSSL
+Watchdog
+Werkzeug
