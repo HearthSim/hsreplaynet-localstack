@@ -23,6 +23,7 @@ source "$ZSH_PROFILE"
 
 pip install --upgrade pip setuptools wheel
 pip install -r "$PROJECTDIR/requirements.txt"
+pip install -r "$HSREPLAYNET/requirements/web.txt"
 
 cd "$HSREPLAYNET" || exit
 yarn install --modules-folder "$NODE_MODULES" --pure-lockfile --no-progress
