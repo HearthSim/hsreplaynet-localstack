@@ -34,9 +34,12 @@ apt install -qy curl git vim htop iotop mlocate strace tcpdump tree unzip zsh
 # Libraries and compiler
 apt install -qy gcc g++ libxml2 libxml2-dev libxslt1-dev libssl-dev libffi-dev libpq-dev
 
+# Python 3.5
+apt install -qy python3 python3-dev python3-venv
+
 # Python 3.6 (dpkg upgrade needed to compile c libraries)
-apt install -qyt unstable python3.6 python3.6-dev python3.6-venv libdpkg-perl
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+# apt install -qyt unstable python3.6 python3.6-dev python3.6-venv libdpkg-perl
+# update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 
 # Third party libraries
 apt install -qy nodejs yarn supervisor influxdb postgresql-9.6 redis-server
