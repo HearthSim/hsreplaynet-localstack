@@ -10,7 +10,7 @@ dpkg -s apt-transport-https &>/dev/null || {
 
 echo "deb http://cloudfront.debian.net/debian jessie-backports main
 deb-src http://cloudfront.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list
-echo 'deb http://deb.debian.org/debian unstable main contrib' >> /etc/apt/sources.list
+echo "deb http://deb.debian.org/debian unstable main contrib" > /etc/apt/sources.list.d/unstable.list
 echo "deb https://repos.influxdata.com/debian jessie stable" > /etc/apt/sources.list.d/influxdb.list
 echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" > /etc/apt/sources.list.d/postgres.list
 echo "deb https://deb.nodesource.com/node_7.x jessie main" > /etc/apt/sources.list.d/nodejs.list
