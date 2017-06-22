@@ -47,8 +47,19 @@ apt install -qy nodejs yarn supervisor influxdb postgresql-9.6 redis-server
 # Backports
 apt-get install -qyt jessie-backports redis-server
 
-# Enable trust authentication for postgresql
-sed -i "s/all *postgres *peer/all postgres trust/" /etc/postgresql/9.6/main/pg_hba.conf
+# postgresql configuration
+
+echo "
+local all postgres trust
+local all all peer
+host all all 127.0.0.1/32 trust
+host all all ::1/128 trust
+host all all 10.0.0.0/16 trust" > /etc/postgresql/9.6/main/pg_hba.conf
+
+# replace listen_addresses with *
+sed "/listen_addresses/d" -i /etc/postgresql/9.6/main/postgresql.conf
+echo "listen_addresses = '*'" >> /etc/postgresql/9.6/main/postgresql.conf
+
 systemctl enable postgresql.service
 systemctl restart postgresql.service
 
