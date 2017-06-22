@@ -50,6 +50,10 @@ apt install -qy postgresql-9.6 postgresql-plpython-9.6 postgresql-plpython3-9.6
 # Backports
 apt-get install -qyt jessie-backports redis-server
 
+# Python 2.7 pip (make sure it's up to date)
+apt install -qy --no-install-recommends python-pip python-enum34 python-psycopg2 python-sqlalchemy
+python2 -m pip install --upgrade pip wheel setuptools
+
 # postgresql configuration
 
 echo "
