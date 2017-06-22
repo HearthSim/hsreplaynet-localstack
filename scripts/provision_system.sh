@@ -42,7 +42,10 @@ apt install -qy python3 python3-dev python3-venv
 # update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 
 # Third party libraries
-apt install -qy nodejs yarn supervisor influxdb postgresql-9.6 redis-server
+apt install -qy nodejs yarn supervisor influxdb redis-server
+
+# Postgres
+apt install -qy postgresql-9.6 postgresql-plpython-9.6 postgresql-plpython3-9.6
 
 # Backports
 apt-get install -qyt jessie-backports redis-server
