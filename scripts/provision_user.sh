@@ -36,6 +36,7 @@ createdb --username postgres hsreplaynet
 createdb --username postgres uploads
 createdb --username postgres test_hsredshift
 python "$HSREPLAYNET/manage.py" migrate --no-input
+python "$HSREPLAYNET/manage.py" migrate --database=uploads --no-input
 python "$HSREPLAYNET/manage.py" load_cards
 python "$PROJECTDIR/scripts/initdb.py"
 
