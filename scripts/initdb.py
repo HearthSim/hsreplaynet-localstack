@@ -29,7 +29,7 @@ def create_or_update_user(username, password, apikey, admin=False):
 	user.is_superuser = admin
 	user.is_staff = admin
 	user.set_password(password)
-	user.email = username + "@local.hearthsim.net"
+	user.email = username + "@hearthsim.local"
 	user.save()
 
 	# Associate an auth token with the user
@@ -50,7 +50,7 @@ def update_default_site(site_id):
 
 def create_default_api_key():
 	key, created = APIKey.objects.get_or_create(full_name=API_KEY_NAME)
-	key.email = "admin@local.hearthsim.net"
+	key.email = "admin@hearthsim.local"
 	key.website = "http://localhost:8000"
 	key.save()
 	return key
