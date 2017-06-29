@@ -6,7 +6,7 @@ mkdir -p "$HOME/.cache" "$HOME/.config/zsh"
 cat > "$ZSH_PROFILE" <<EOF
 source \$HOME/env/bin/activate
 export NODE_MODULES="\$HOME/node_modules"
-export PATH="\$VIRTUAL_ENV/bin:\$NODE_MODULES/.bin:\$PATH"
+export PATH="\$VIRTUAL_ENV/bin:\$NODE_MODULES/.bin:\$HOME/bin:\$PATH"
 export PROJECTDIR=\$HOME/projects
 export HSREPLAYNET=\$PROJECTDIR/HSReplay.net
 export PYTHONPATH=\$HSREPLAYNET
@@ -20,6 +20,10 @@ cp /etc/skel/.zshrc "$HOME/.zshrc"
 
 python3 -m venv "$HOME/env"
 source "$ZSH_PROFILE"
+
+mkdir -p "$HOME/bin"
+cp "$PROJECTDIR/scripts/load_udfs.sh" "$HOME/bin/load_udfs"
+chmod +x "$HOME/bin/load_udfs"
 
 pip install --upgrade pip setuptools wheel
 pip install -r "$PROJECTDIR/requirements.txt"
