@@ -1,7 +1,9 @@
 #!/bin/bash
 
+set -e
 
-BASEDIR="$(readlink -f "$(dirname "$0")/..")"
+
+BASEDIR="$(dirname "$0")/..)"
 GITHUB="git@github.com:HearthSim"
 
 HSREPLAYNET_GIT="$GITHUB/HSReplay.net"
