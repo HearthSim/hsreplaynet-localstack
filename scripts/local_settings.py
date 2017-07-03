@@ -15,7 +15,7 @@ DATABASES = {
 		"NAME": "hsreplaynet",
 		"USER": "postgres",
 		"PASSWORD": "",
-		"HOST": "",
+		"HOST": "localhost",
 		"PORT": "",
 	},
 	"uploads": {
@@ -23,7 +23,7 @@ DATABASES = {
 		"NAME": "uploads",
 		"USER": "postgres",
 		"PASSWORD": "",
-		"HOST": "",
+		"HOST": "localhost",
 		"PORT": "",
 	}
 }
