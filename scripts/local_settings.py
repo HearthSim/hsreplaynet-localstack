@@ -28,6 +28,26 @@ DATABASES = {
 	}
 }
 
+
+REDSHIFT_DATABASE = {
+	"ENGINE": "postgresql",
+	"NAME": "test_hsredshift",
+	"USER": "postgres",
+	"PASSWORD": "",
+	"HOST": "localhost",
+	"PORT": 5432,
+	"OPTIONS": {
+		"sslmode": "disable",
+	}
+}
+
+REDSHIFT_DATABASE["JDBC_URL"] = "jdbc:redshift://{host}:{port}/{db}".format(
+	host=REDSHIFT_DATABASE["HOST"],
+	port=REDSHIFT_DATABASE["PORT"],
+	db=REDSHIFT_DATABASE["NAME"]
+)
+
+
 UPLOADS_DB = "uploads"
 DATABASE_ROUTERS = ["hsreplaynet.utils.routers.UploadEventsRouter"]
 
