@@ -54,6 +54,15 @@ apt-get install -qyt jessie-backports redis-server
 apt install -qy --no-install-recommends python-pip python-enum34 python-psycopg2 python-sqlalchemy
 python2 -m pip install --upgrade pip wheel setuptools
 
+
+# Compile query_group redshift compat extension
+set -e
+rm -rf "$HOME/redshift-compat"
+cp -rf "/home/vagrant/projects/scripts/redshift-compat" "$HOME/redshift-compat"
+make -C "$HOME/redshift-compat" && make -C "$HOME/redshift-compat" install
+rm -rf "$HOME/redshift-compat"
+
+
 # postgresql configuration
 
 echo "
@@ -66,6 +75,11 @@ host all all 10.0.0.0/16 trust" > /etc/postgresql/9.6/main/pg_hba.conf
 # replace listen_addresses with *
 sed "/listen_addresses/d" -i /etc/postgresql/9.6/main/postgresql.conf
 echo "listen_addresses = '*'" >> /etc/postgresql/9.6/main/postgresql.conf
+
+# load query_group extension
+sed "/shared_preload_libraries/d" -i /etc/postgresql/9.6/main/postgresql.conf
+echo "shared_preload_libraries = 'query_group'" >> /etc/postgresql/9.6/main/postgresql.conf
+
 
 systemctl enable postgresql.service
 systemctl restart postgresql.service
