@@ -22,8 +22,8 @@ python3 -m venv "$HOME/env"
 source "$ZSH_PROFILE"
 
 mkdir -p "$HOME/bin"
-cp "$PROJECTDIR/scripts/load_udfs.sh" "$HOME/bin/load_udfs"
-chmod +x "$HOME/bin/load_udfs"
+cp "$PROJECTDIR/scripts/rebuild_redshift.sh" "$HOME/bin/rebuild_redshift"
+chmod +x "$HOME/bin/rebuild_redshift"
 
 pip install --upgrade pip setuptools wheel
 pip install -r "$PROJECTDIR/requirements.txt"
