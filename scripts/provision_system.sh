@@ -29,7 +29,7 @@ apt update -q
 apt full-upgrade -qy
 
 # General dependencies
-apt install -qy curl git vim htop iotop mlocate strace tcpdump tree unzip zsh
+apt install -qy curl dos2unix git vim htop iotop mlocate strace tcpdump tree unzip zsh
 
 # Libraries and compiler
 apt install -qy gcc g++ libxml2 libxml2-dev libxslt1-dev libssl-dev libffi-dev libpq-dev
