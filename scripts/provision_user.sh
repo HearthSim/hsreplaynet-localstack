@@ -13,6 +13,7 @@ export PYTHONPATH=\$HSREPLAYNET
 export DJANGO_SETTINGS_MODULE=hsreplaynet.settings
 export HSREPLAYNET_DEBUG=1
 export ENV_VAGRANT=1
+export HISTFILE="\$HOME/.cache/zsh_history"
 
 cd \$HSREPLAYNET
 EOF
