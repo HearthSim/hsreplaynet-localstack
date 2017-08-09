@@ -33,6 +33,13 @@ pip install -r "$HSREPLAYNET/requirements/web.txt"
 cd "$HSREPLAYNET" || exit
 yarn install --modules-folder "$NODE_MODULES" --pure-lockfile --no-progress
 
+# Missing .bin folder in yarn, see yarnpkg/yarn#3724
+NODE_BIN_FOLDER="$HOME/node_modules/.bin"
+if [[ ! -d $NODE_BIN_FOLDER ]]; then
+	mkdir $NODE_BIN_FOLDER
+	ln -s "$HOME/node_modules/webpack/bin/webpack.js" "$NODE_BIN_FOLDER/webpack"
+fi
+
 if [[ ! -e $HSREPLAYNET/hsreplaynet/local_settings.py ]]; then
 	cp "$PROJECTDIR/scripts/local_settings.py" "$HSREPLAYNET/hsreplaynet/local_settings.py"
 fi
