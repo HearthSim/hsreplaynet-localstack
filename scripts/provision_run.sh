@@ -9,21 +9,16 @@ export HSREPLAYNET_DEBUG=1
 export PATH="$HOME/node_modules/.bin:$PATH"
 
 # Kill remnants
-killall -9 -q python node sassc
+killall -9 -q python node
 
 echo "Starting Django server"
 python "$HSREPLAYNET/manage.py" runserver 0.0.0.0:8000 &
 
-echo "Starting webpack watcher"
+echo "Starting Webpack watcher"
 PYTHONPATH="$HSREPLAYNET" webpack -d \
 	--devtool cheap-module-eval-source-map \
 	--env.cache \
 	--config "$HSREPLAYNET/webpack.config.js" \
-	--watch &
-
-echo "Starting scss watcher"
-sassc "$HSREPLAYNET/hsreplaynet/static/styles/main.scss" "$HSREPLAYNET/hsreplaynet/static/styles/main.css" \
-	--sourcemap --source-comments \
 	--watch &
 
 echo "Starting RQ Workers"
