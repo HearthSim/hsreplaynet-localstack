@@ -57,10 +57,10 @@ python2 -m pip install --upgrade pip wheel setuptools
 
 # Compile query_group redshift compat extension
 set -e
-rm -rf "$HOME/redshift-compat"
-cp -rf "/home/vagrant/projects/scripts/redshift-compat" "$HOME/redshift-compat"
-make -C "$HOME/redshift-compat" && make -C "$HOME/redshift-compat" install
-rm -rf "$HOME/redshift-compat"
+rm -rf "$HOME/pgredshift"
+cp -rf "/home/vagrant/projects/scripts/pgredshift" "$HOME/pgredshift"
+make -C "$HOME/pgredshift" && make -C "$HOME/pgredshift" install
+rm -rf "$HOME/pgredshift"
 
 
 # postgresql configuration
