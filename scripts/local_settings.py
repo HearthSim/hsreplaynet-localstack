@@ -73,6 +73,15 @@ CACHES = {
 	}
 }
 
+additional_caches = (
+	"live_stats",
+	"deck_prediction_primary",
+	"deck_prediction_replica",
+)
+
+for c in additional_caches:
+	CACHES[c] = CACHES["redshift"].copy()
+
 
 STRIPE_LIVE_MODE = False
 STRIPE_TEST_SECRET_KEY = "sk_test_"
