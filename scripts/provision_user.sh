@@ -32,6 +32,7 @@ pip install -r "$HSREPLAYNET/requirements/web.txt"
 
 cd "$HSREPLAYNET" || exit
 yarn install --modules-folder "$NODE_MODULES" --no-bin-links --pure-lockfile --no-progress
+chmod +x "$NODE_MODULES"/webpack/bin/webpack.js
 
 if [[ ! -e $HSREPLAYNET/hsreplaynet/local_settings.py ]]; then
 	cp "$PROJECTDIR/scripts/local_settings.py" "$HSREPLAYNET/hsreplaynet/local_settings.py"
