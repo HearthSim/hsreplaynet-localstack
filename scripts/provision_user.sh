@@ -25,6 +25,7 @@ source "$ZSH_PROFILE"
 mkdir -p "$HOME/bin"
 cp "$PROJECTDIR/scripts/rebuild_redshift.sh" "$HOME/bin/rebuild_redshift"
 chmod +x "$HOME/bin/rebuild_redshift"
+dos2unix "$HOME/bin/rebuild_redshift"  # For Windows hosts
 
 pip install --upgrade pip setuptools wheel
 pip install -r "$PROJECTDIR/requirements.txt"
@@ -49,6 +50,8 @@ python "$PROJECTDIR/scripts/initdb.py"
 influx --execute "create database hdt"
 influx --execute "create database hsreplaynet"
 influx --execute "create database joust"
+
+rebuild_redshift
 
 if [[ ! -d $HSREPLAYNET/hsreplaynet/static/vendor ]]; then
 	"$HSREPLAYNET/scripts/get_vendor_static.sh"
