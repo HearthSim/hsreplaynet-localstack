@@ -19,6 +19,7 @@ PYTHONPATH="$HSREPLAYNET" $NODE_MODULES/webpack/bin/webpack.js -d \
 	--devtool cheap-module-eval-source-map \
 	--env.cache \
 	--config "$HSREPLAYNET/webpack.config.js" \
+	--progress
 	--watch &
 
 echo "Starting RQ Workers"
