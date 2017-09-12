@@ -90,6 +90,13 @@ DJSTRIPE_USE_NATIVE_JSONFIELD = True
 MONTHLY_PLAN_ID = "hearthsim-pro-monthly"
 SEMIANNUAL_PLAN_ID = "hearthsim-pro-semiannual"
 
+PAYPAL_CLIENT_ID = "foo"
+PAYPAL_CLIENT_SECRET = "bar"
+PAYPAL_MODE = "sandbox"
+
+PAYPAL_MONTHLY_PLAN_ID = ""
+PAYPAL_SEMIANNUAL_PLAN_ID = ""
+
 
 INFLUX_DATABASES = {
 	"hsreplaynet": {
