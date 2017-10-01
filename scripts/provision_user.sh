@@ -2,11 +2,10 @@
 
 ZSH_PROFILE="$HOME/.config/zsh/profile"
 
-mkdir -p "$HOME/.cache" "$HOME/.config/zsh"
+mkdir -p "$HOME/bin" "$HOME/.cache" "$HOME/.config/zsh"
 cat > "$ZSH_PROFILE" <<EOF
 source \$HOME/env/bin/activate
 export NODE_MODULES="\$HOME/node_modules"
-export PATH="\$VIRTUAL_ENV/bin:\$NODE_MODULES/.bin:\$HOME/bin:\$PATH"
 export PROJECTDIR=\$HOME/projects
 export HSREPLAYNET=\$PROJECTDIR/HSReplay.net
 export PYTHONPATH=\$HSREPLAYNET
@@ -14,15 +13,20 @@ export DJANGO_SETTINGS_MODULE=hsreplaynet.settings
 export HSREPLAYNET_DEBUG=1
 export ENV_VAGRANT=1
 export HISTFILE="\$HOME/.cache/zsh_history"
+export PYENV_ROOT="\$HOME/.pyenv"
+export PATH="\$PYENV_ROOT/bin:\$VIRTUAL_ENV/bin:\$NODE_MODULES/.bin:\$HOME/bin:\$PATH"
+eval "\$(pyenv init -)"
+eval "\$(pyenv virtualenv-init -)"
 
 cd \$HSREPLAYNET
 EOF
 cp /etc/skel/.zshrc "$HOME/.zshrc"
 
-python3 -m venv "$HOME/env"
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 source "$ZSH_PROFILE"
 
-mkdir -p "$HOME/bin"
+python3 -m venv "$HOME/env"
+
 cp "$PROJECTDIR/scripts/rebuild_redshift.sh" "$HOME/bin/rebuild_redshift"
 chmod +x "$HOME/bin/rebuild_redshift"
 dos2unix "$HOME/bin/rebuild_redshift"  # For Windows hosts
