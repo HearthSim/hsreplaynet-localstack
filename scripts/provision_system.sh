@@ -12,18 +12,13 @@ echo "deb http://cloudfront.debian.net/debian jessie-backports main
 deb-src http://cloudfront.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list
 echo "deb http://deb.debian.org/debian unstable main contrib" > /etc/apt/sources.list.d/unstable.list
 echo "deb https://repos.influxdata.com/debian jessie stable" > /etc/apt/sources.list.d/influxdb.list
-echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" > /etc/apt/sources.list.d/postgres.list
+echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/postgres.list
 echo "deb https://deb.nodesource.com/node_7.x jessie main" > /etc/apt/sources.list.d/nodejs.list
 echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 wget https://repos.influxdata.com/influxdb.key -qO - | apt-key add -
 wget https://www.postgresql.org/media/keys/ACCC4CF8.asc -qO - | apt-key add -
 wget https://deb.nodesource.com/gpgkey/nodesource.gpg.key -qO - | apt-key add -
 wget https://dl.yarnpkg.com/debian/pubkey.gpg -qO - | apt-key add -
-
-# Pin unstable at 300
-echo "Package: *
-Pin: release o=Debian,a=unstable
-Pin-Priority: 300" > /etc/apt/preferences
 
 apt update -q
 apt full-upgrade -qy
@@ -38,10 +33,6 @@ apt install -qy gcc g++ \
 
 # Python 3.5
 apt install -qy python3 python3-dev python3-venv
-
-# Python 3.6 (dpkg upgrade needed to compile c libraries)
-# apt install -qyt unstable python3.6 python3.6-dev python3.6-venv libdpkg-perl
-# update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 
 # Third party libraries
 apt install -qy nodejs yarn supervisor influxdb redis-server

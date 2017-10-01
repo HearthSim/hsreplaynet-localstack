@@ -1,11 +1,12 @@
 #!/bin/bash
 export DB_CONNECTION=postgresql://postgres@localhost/test_hsredshift
+export PYTHON=/usr/bin/python2.7
 
-sudo /usr/local/bin/pip2.7 install --upgrade hearthstone
+sudo "$PYTHON" -m pip install --upgrade hearthstone
 
 cd ~/projects/hsredshift/udfs
-/usr/bin/python2.7 ./setup.py load_into_postgres
-sudo /usr/bin/python2.7 ./setup.py install
+"$PYTHON" ./setup.py load_into_postgres
+sudo "$PYTHON" ./setup.py install
 
 python -m hsredshift.utils.postgres_compat --apply
 python -m hsredshift.etl.models --apply

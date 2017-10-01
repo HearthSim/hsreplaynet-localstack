@@ -3,7 +3,7 @@
 
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "debian/contrib-jessie64"
+	config.vm.box = "debian/contrib-stretch64"
 	config.vm.post_up_message = ""
 
 	config.vm.hostname = "hearthsim.local"
