@@ -63,7 +63,7 @@ def create_default_flatpage(url, title):
 	return page
 
 
-def create_socialapp(provider="battlenet", name="Battle.net (development)"):
+def create_socialapp(provider, name):
 	socialapp, created = SocialApp.objects.get_or_create(provider=provider)
 	socialapp.name = name
 	socialapp.save()
@@ -94,7 +94,9 @@ def main():
 	create_default_flatpage("/about/privacy/", "Privacy Policy")
 	create_default_flatpage("/about/tos/", "Terms of Service")
 	create_oauth2_application("Hearthstone Deck Tracker", "https://hsdecktracker.net")
-	create_socialapp()
+	create_socialapp("battlenet", "Battle.net (development)")
+	create_socialapp("discord", "Discord (development)")
+	create_socialapp("twitch", "Twitch (development)")
 
 
 if __name__ == "__main__":
