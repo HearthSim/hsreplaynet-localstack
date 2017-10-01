@@ -4,7 +4,6 @@ ZSH_PROFILE="$HOME/.config/zsh/profile"
 
 mkdir -p "$HOME/bin" "$HOME/.cache" "$HOME/.config/zsh"
 cat > "$ZSH_PROFILE" <<EOF
-source \$HOME/env/bin/activate
 export NODE_MODULES="\$HOME/node_modules"
 export PROJECTDIR=\$HOME/projects
 export HSREPLAYNET=\$PROJECTDIR/HSReplay.net
@@ -25,7 +24,14 @@ cp /etc/skel/.zshrc "$HOME/.zshrc"
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 source "$ZSH_PROFILE"
 
+pyenv install 3.6.2 --skip-existing
+
 python3 -m venv "$HOME/env"
+source "$HOME/env/bin/activate"
+
+cat >> "$ZSH_PROFILE" <<EOF
+source "\$HOME/env/bin/activate"
+EOF
 
 cp "$PROJECTDIR/scripts/rebuild_redshift.sh" "$HOME/bin/rebuild_redshift"
 chmod +x "$HOME/bin/rebuild_redshift"

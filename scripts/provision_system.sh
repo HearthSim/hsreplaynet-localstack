@@ -32,7 +32,9 @@ apt full-upgrade -qy
 apt install -qy curl dos2unix git vim htop iotop mlocate strace tcpdump tree unzip zsh
 
 # Libraries and compiler
-apt install -qy gcc g++ libxml2 libxml2-dev libxslt1-dev libssl-dev libffi-dev libpq-dev
+apt install -qy gcc g++ \
+	libxml2 libxml2-dev libxslt1-dev libssl-dev libffi-dev libpq-dev \
+	libbz2-dev libsqlite3-dev libreadline-dev zlib1g-dev
 
 # Python 3.5
 apt install -qy python3 python3-dev python3-venv
