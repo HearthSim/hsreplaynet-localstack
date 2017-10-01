@@ -72,14 +72,28 @@ def create_socialapp(provider="battlenet", name="Battle.net (development)"):
 	return socialapp
 
 
+def create_oauth2_application(name, homepage):
+	from oauth2_provider.models import get_application_model
+
+	Application = get_application_model()
+	app, created = Application.objects.get_or_create(
+		name=name, defaults={
+			"client_type": "public",
+			"authorization_grant_type": "authorization_code",
+			"homepage": homepage,
+		}
+	)
+
+
 def main():
 	update_default_site(settings.SITE_ID)
 	apikey = create_default_api_key()
 	create_or_update_user("admin", "admin", apikey, admin=True)
 	create_or_update_user("user", "user", apikey)
-	create_default_flatpage("/about/contact/", "Contact Us")
+	create_default_flatpage("/contact/", "Contact Us")
 	create_default_flatpage("/about/privacy/", "Privacy Policy")
 	create_default_flatpage("/about/tos/", "Terms of Service")
+	create_oauth2_application("Hearthstone Deck Tracker", "https://hsdecktracker.net")
 	create_socialapp()
 
 
