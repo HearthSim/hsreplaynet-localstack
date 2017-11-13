@@ -8,12 +8,10 @@ dpkg -s apt-transport-https &>/dev/null || {
 	apt-get install -qy apt-transport-https
 }
 
-echo "deb http://cloudfront.debian.net/debian jessie-backports main
-deb-src http://cloudfront.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list
-echo "deb http://deb.debian.org/debian unstable main contrib" > /etc/apt/sources.list.d/unstable.list
-echo "deb https://repos.influxdata.com/debian jessie stable" > /etc/apt/sources.list.d/influxdb.list
+# echo "deb http://deb.debian.org/debian unstable main contrib" > /etc/apt/sources.list.d/unstable.list
+echo "deb https://repos.influxdata.com/debian stretch stable" > /etc/apt/sources.list.d/influxdb.list
 echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/postgres.list
-echo "deb https://deb.nodesource.com/node_7.x jessie main" > /etc/apt/sources.list.d/nodejs.list
+echo "deb https://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodejs.list
 echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 wget https://repos.influxdata.com/influxdb.key -qO - | apt-key add -
 wget https://www.postgresql.org/media/keys/ACCC4CF8.asc -qO - | apt-key add -
@@ -31,22 +29,24 @@ apt install -qy gcc g++ \
 	libxml2 libxml2-dev libxslt1-dev libssl-dev libffi-dev libpq-dev \
 	libbz2-dev libsqlite3-dev libreadline-dev zlib1g-dev
 
-# Python 3.5
-apt install -qy python3 python3-dev python3-venv
-
 # Third party libraries
 apt install -qy nodejs yarn supervisor influxdb redis-server
 
 # Postgres
 apt install -qy postgresql-9.6 postgresql-plpython-9.6 postgresql-plpython3-9.6 postgresql-server-dev-9.6
 
-# Backports
-apt-get install -qyt jessie-backports redis-server
+# Redis
+apt install redis-server
+
+# Python 3.5 (core)
+apt install -qy python3 python3-dev python3-venv
 
 # Python 2.7 pip (make sure it's up to date)
 apt install -qy --no-install-recommends python-pip python-enum34 python-psycopg2 python-sqlalchemy
 python2 -m pip install --upgrade pip wheel setuptools
 
+# Cleanup
+apt autoremove --purge -y
 
 # Compile query_group redshift compat extension
 set -e
