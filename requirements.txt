@@ -6,6 +6,9 @@ requests
 awscli
 boto3
 
+# Postgres tools
+pgcli
+
 # tests
 fakeredis
 flake8
