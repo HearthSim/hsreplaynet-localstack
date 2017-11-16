@@ -21,6 +21,7 @@ eval "\$(pyenv virtualenv-init -)"
 cd \$HSREPLAYNET
 EOF
 cp /etc/skel/.zshrc "$HOME/.zshrc"
+cp "$PROJECTDIR/scripts/res/psqlrc" "$HOME/.psqlrc"
 
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 source "$ZSH_PROFILE"
