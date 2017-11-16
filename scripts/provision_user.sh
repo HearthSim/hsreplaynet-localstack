@@ -14,6 +14,7 @@ export ENV_VAGRANT=1
 export HISTFILE="\$HOME/.cache/zsh_history"
 export PYENV_ROOT="\$HOME/.pyenv"
 export PATH="\$PYENV_ROOT/bin:\$VIRTUAL_ENV/bin:\$NODE_MODULES/.bin:\$HOME/bin:\$PATH"
+export PGUSER=postgres
 eval "\$(pyenv init -)"
 eval "\$(pyenv virtualenv-init -)"
 
