@@ -17,6 +17,7 @@ export PATH="\$PYENV_ROOT/bin:\$VIRTUAL_ENV/bin:\$NODE_MODULES/.bin:\$HOME/bin:\
 export PGUSER=postgres
 eval "\$(pyenv init -)"
 eval "\$(pyenv virtualenv-init -)"
+pyenv local 3.6.2
 
 cd \$HSREPLAYNET
 EOF
@@ -27,6 +28,7 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 source "$ZSH_PROFILE"
 
 pyenv install 3.6.2 --skip-existing
+pyenv local 3.6.2
 
 python3 -m venv "$HOME/env"
 source "$HOME/env/bin/activate"
