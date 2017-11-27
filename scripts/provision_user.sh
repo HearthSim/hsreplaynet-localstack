@@ -67,8 +67,7 @@ influx --execute "create database joust"
 
 rebuild_redshift
 
-if [[ ! -d $HSREPLAYNET/hsreplaynet/static/vendor ]]; then
-	"$HSREPLAYNET/scripts/get_vendor_static.sh"
-fi
+# always update the static files, since they might be partially broken
+"$HSREPLAYNET/scripts/get_vendor_static.sh"
 
 mkdir -p "$HSREPLAYNET/build/generated"
