@@ -16,6 +16,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
+from djstripe.models import Customer
 from hearthsim_identity.accounts.models import AuthToken
 from hearthsim_identity.api.models import APIKey
 
@@ -31,6 +32,15 @@ def create_or_update_user(username, password, apikey, admin=False):
 	user.set_password(password)
 	user.email = username + "@hearthsim.local"
 	user.save()
+
+	# Associate a Stripe Customer with the user so we don't call the API...
+	Customer.objects.get_or_create(
+		subscriber=user, livemode=False,
+		defaults={
+			"stripe_id": f"cus_user_{user.pk}",
+			"account_balance": 0, "delinquent": False
+		}
+	)
 
 	# Associate an auth token with the user
 	token, created = AuthToken.objects.get_or_create(
