@@ -17,8 +17,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
 from djstripe.models import Customer
-from hearthsim_identity.accounts.models import AuthToken
-from hearthsim_identity.api.models import APIKey
+from hearthsim.identity.accounts.models import AuthToken
+from hearthsim.identity.api.models import APIKey
 
 
 User = get_user_model()
