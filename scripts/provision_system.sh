@@ -11,7 +11,7 @@ dpkg -s apt-transport-https &>/dev/null || {
 # echo "deb http://deb.debian.org/debian unstable main contrib" > /etc/apt/sources.list.d/unstable.list
 echo "deb https://repos.influxdata.com/debian stretch stable" > /etc/apt/sources.list.d/influxdb.list
 echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/postgres.list
-echo "deb https://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodejs.list
+echo "deb https://deb.nodesource.com/node_9.x stretch main" > /etc/apt/sources.list.d/nodejs.list
 echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 wget https://repos.influxdata.com/influxdb.key -qO - | apt-key add -
 wget https://www.postgresql.org/media/keys/ACCC4CF8.asc -qO - | apt-key add -
