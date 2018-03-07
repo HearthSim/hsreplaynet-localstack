@@ -19,7 +19,7 @@ wget https://deb.nodesource.com/gpgkey/nodesource.gpg.key -qO - | apt-key add -
 wget https://dl.yarnpkg.com/debian/pubkey.gpg -qO - | apt-key add -
 
 apt update -q
-apt full-upgrade -qy
+# apt full-upgrade -qy
 
 # General dependencies
 apt install -qy curl dos2unix git vim ack htop iotop mlocate psmisc strace tcpdump tree unzip zsh
