@@ -6,7 +6,8 @@ requests
 awscli
 boto3
 
-# Postgres tools
+# Other cli tools
+httpie
 pgcli
 
 # tests
