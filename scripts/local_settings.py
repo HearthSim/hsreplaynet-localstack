@@ -48,10 +48,6 @@ REDSHIFT_DATABASE["JDBC_URL"] = "jdbc:redshift://{host}:{port}/{db}".format(
 )
 
 
-UPLOADS_DB = "uploads"
-DATABASE_ROUTERS = ["hsreplaynet.utils.routers.UploadEventsRouter"]
-
-
 # Cache (django-redis-cache)
 # https://django-redis-cache.readthedocs.io/en/latest/intro_quick_start.html
 CACHES = {
