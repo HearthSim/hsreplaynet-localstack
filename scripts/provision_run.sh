@@ -5,7 +5,6 @@ HSREPLAYNET="$PROJECTDIR/HSReplay.net"
 NODE_MODULES="$HOME/node_modules"
 
 source "$HOME/env/bin/activate"
-export ENV_VAGRANT=1
 export HSREPLAYNET_DEBUG=1
 
 # Kill remnants
