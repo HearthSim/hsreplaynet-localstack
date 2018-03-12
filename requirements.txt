@@ -14,6 +14,7 @@ pgcli
 fakeredis
 flake8
 flake8-quotes
+flake8-isort
 isort
 moto
 pytest
