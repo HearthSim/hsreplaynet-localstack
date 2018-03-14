@@ -25,7 +25,7 @@ apt update -q
 apt install -qy curl dos2unix git vim ack htop iotop mlocate psmisc strace tcpdump tree unzip zsh
 
 # Libraries and compiler
-apt install -qy gcc g++ \
+apt install -qy g++ gcc gettext \
 	libxml2 libxml2-dev libxslt1-dev libssl-dev libffi-dev libpq-dev \
 	libbz2-dev libsqlite3-dev libreadline-dev zlib1g-dev
 
