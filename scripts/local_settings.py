@@ -12,18 +12,18 @@ ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http"
 DATABASES = {
 	"default": {
 		"ENGINE": "django.db.backends.postgresql",
-		"NAME": "hsreplaynet",
+		"NAME": "postgres",
 		"USER": "postgres",
 		"PASSWORD": "",
-		"HOST": "localhost",
+		"HOST": "db",
 		"PORT": "",
 	},
 	"uploads": {
 		"ENGINE": "django.db.backends.postgresql",
-		"NAME": "uploads",
+		"NAME": "postgres",
 		"USER": "postgres",
 		"PASSWORD": "",
-		"HOST": "localhost",
+		"HOST": "db",
 		"PORT": "",
 	}
 }
