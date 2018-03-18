@@ -6,10 +6,6 @@ if [[ ! -e "$basedir/HSReplay.net" ]]; then
 	git clone "git@github.com:HearthSim/HSReplay.net" "$basedir/HSReplay.net"
 fi
 
-if [[ ! -e "$basedir/stripe-mock" ]]; then
-	git clone "git@github.com:stripe/stripe-mock.git" "$basedir/stripe-mock"
-fi
-
 if [[ ! -e "$basedir/HSReplay.net/hsreplaynet/local_settings.py" ]]; then
 	echo "Generating new local_settings.py"
 	cp "$basedir/scripts/local_settings.py" "$basedir/HSReplay.net/hsreplaynet/local_settings.py"
