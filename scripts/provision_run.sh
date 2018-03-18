@@ -5,7 +5,7 @@ HSREPLAYNET="$PROJECTDIR/HSReplay.net"
 NODE_MODULES="$HOME/node_modules"
 
 source "$HOME/env/bin/activate"
-export HSREPLAYNET_DEBUG=1
+export AWS_DEFAULT_REGION=us-east-1
 
 # Kill remnants
 killall -9 -q python node
