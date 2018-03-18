@@ -11,6 +11,11 @@ services:
     ports:
       - "6379:6379"
 
+  stripe:
+    build: stripe-mock
+    ports:
+      - "12111:12111"
+
   frontend:
     image: node:9-stretch
     command: ./run_frontend.sh
@@ -26,6 +31,7 @@ services:
     command: python /opt/hsreplay.net/source/manage.py runserver 0.0.0.0:8000
     volumes:
       - "$PWD/HSReplay.net:/opt/hsreplay.net/source"
+    working_dir: /opt/hsreplay.net/source
     ports:
       - "8000:8000"
     environment:
@@ -33,3 +39,4 @@ services:
     depends_on:
       - db
       - redis
+      - stripe
