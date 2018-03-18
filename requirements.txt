@@ -16,3 +16,6 @@ pgcli
 
 # Debugging
 q
+
+# Dev packages
+django-debug-toolbar
