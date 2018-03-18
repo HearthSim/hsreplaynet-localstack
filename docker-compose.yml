@@ -28,7 +28,6 @@ services:
 
   django:
     build: .
-    command: python /opt/hsreplay.net/source/manage.py runserver 0.0.0.0:8000
     volumes:
       - "$PWD/HSReplay.net:/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
