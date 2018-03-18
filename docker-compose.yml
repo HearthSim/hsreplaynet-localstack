@@ -29,7 +29,7 @@ services:
     command: sh -c 'yarn && yarn dev'
     volumes:
       - type: bind
-        source: "$PWD/HSReplay.net"
+        source: "./HSReplay.net"
         target: "/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
     ports:
@@ -39,7 +39,7 @@ services:
     build: .
     volumes:
       - type: bind
-        source: "$PWD/HSReplay.net"
+        source: "./HSReplay.net"
         target: "/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
     ports:
