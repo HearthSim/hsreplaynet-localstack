@@ -18,9 +18,8 @@ services:
 
   frontend:
     image: node:9-stretch
-    command: ./run_frontend.sh
+    command: sh -c 'yarn && yarn dev'
     volumes:
-      - "$PWD/run_frontend.sh:/opt/hsreplay.net/source/run_frontend.sh"
       - "$PWD/HSReplay.net:/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
     ports:
