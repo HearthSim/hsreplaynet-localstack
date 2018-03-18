@@ -50,6 +50,7 @@ services:
       AWS_DEFAULT_REGION: "us-east-1"
       DJANGO_SETTINGS_MODULE: "hsreplaynet.settings"
       HSREPLAYNET_DEBUG: "1"
+      PYTHONUNBUFFERED: "1"
     depends_on:
       - db
       - localstack
