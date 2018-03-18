@@ -1,4 +1,4 @@
-version: "3"
+version: "3.2"
 
 services:
   db:
@@ -28,7 +28,9 @@ services:
     image: node:9-stretch
     command: sh -c 'yarn && yarn dev'
     volumes:
-      - "$PWD/HSReplay.net:/opt/hsreplay.net/source"
+      - type: bind
+        source: "$PWD/HSReplay.net"
+        target: "/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
     ports:
       - "3000:3000"
@@ -36,7 +38,9 @@ services:
   django:
     build: .
     volumes:
-      - "$PWD/HSReplay.net:/opt/hsreplay.net/source"
+      - type: bind
+        source: "$PWD/HSReplay.net"
+        target: "/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
     ports:
       - "8000:8000"

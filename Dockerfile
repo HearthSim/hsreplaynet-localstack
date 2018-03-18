@@ -12,4 +12,4 @@ RUN pip install --upgrade pip wheel setuptools pipenv && \
 	pip install -r /opt/hsreplay.net/requirements/docker.txt
 
 ENV PYTHONPATH=/opt/hsreplay.net/source
-CMD ["/usr/local/bin/django-admin.py", "runserver", "0.0.0.0:8000"]
+CMD ["/opt/hsreplay.net/source/manage.py", "runserver", "0.0.0.0:8000"]
