@@ -1,33 +1,19 @@
-# development tools
-q
-requests
-
-# AWS tools
-awscli
-boto3
-
-# Other cli tools
-httpie
-pgcli
-
 # tests
-fakeredis
 flake8
 flake8-quotes
 flake8-isort
 isort
 moto
+mypy
 pytest
 pytest-django
+rope
 tox
-yapf
 
-# Django utilities
-django-debug-toolbar
-django-sslserver
+# CLI tools
+awscli
+httpie
+pgcli
 
-# runserver_plus and its dependencies
-django-extensions
-pyOpenSSL
-Watchdog
-Werkzeug
+# Debugging
+q

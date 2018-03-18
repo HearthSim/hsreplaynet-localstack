@@ -4,9 +4,10 @@ RUN apt-get update && apt-get -qy install gettext unzip
 
 # Install requirements
 COPY HSReplay.net/requirements /opt/hsreplay.net/requirements
+COPY requirements.txt /opt/hsreplay.net/requirements/docker.txt
 COPY scripts/initdb.py /opt/hsreplay.net/initdb.py
 RUN pip install --upgrade pip wheel setuptools pipenv && \
 	pip install -r /opt/hsreplay.net/requirements/web.txt && \
-	pip install q moto
+	pip install -r /opt/hsreplay.net/requirements/docker.txt
 
 ENV PYTHONPATH=/opt/hsreplay.net/source NODE_ENV=development
