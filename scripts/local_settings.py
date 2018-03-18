@@ -41,26 +41,18 @@ REDSHIFT_DATABASE = {
 	}
 }
 
-REDSHIFT_DATABASE["JDBC_URL"] = "jdbc:redshift://{host}:{port}/{db}".format(
-	host=REDSHIFT_DATABASE["HOST"],
-	port=REDSHIFT_DATABASE["PORT"],
-	db=REDSHIFT_DATABASE["NAME"]
-)
 
-
-# Cache (django-redis-cache)
-# https://django-redis-cache.readthedocs.io/en/latest/intro_quick_start.html
 CACHES = {
 	"default": {
 		"BACKEND": "redis_lock.django_cache.RedisCache",
-		"LOCATION": "localhost:6379",
+		"LOCATION": "redis://redis:6379/0",
 		"OPTIONS": {
 			"CLIENT_CLASS": "django_redis.client.DefaultClient",
 		}
 	},
 	"redshift": {
 		"BACKEND": "redis_lock.django_cache.RedisCache",
-		"LOCATION": "localhost:6379",
+		"LOCATION": "redis://redis:6379/1",
 		"OPTIONS": {
 			"CLIENT_CLASS": "django_redis.client.DefaultClient",
 			"COMPRESSOR": "django_redis.compressors.zlib.ZlibCompressor",
@@ -75,8 +67,9 @@ additional_caches = (
 	"deck_prediction_replica",
 )
 
-for c in additional_caches:
+for i, c in enumerate(additional_caches):
 	CACHES[c] = CACHES["redshift"].copy()
+	CACHES[c]["location"] = f"redis://redis:6379/{i+2}"
 
 
 STRIPE_LIVE_MODE = False

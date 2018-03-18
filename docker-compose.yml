@@ -6,6 +6,11 @@ services:
     ports:
       - "5432:5432"
 
+  redis:
+    image: redis:3.2  # No higher than Elasticache latest
+    ports:
+      - "6379:6379"
+
   frontend:
     image: node:9-stretch
     command: ./run_frontend.sh
@@ -27,3 +32,4 @@ services:
       DJANGO_SETTINGS_MODULE: "hsreplaynet.settings"
     depends_on:
       - db
+      - redis
