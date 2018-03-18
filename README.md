@@ -28,6 +28,7 @@ The following services are available on their default ports:
  - Postgres @ db:5432
  - Redis @ redis:6379
  - Stripe (using [Stripe Mock](https://github.com/stripe/stripe-mock)) @ stripe:1211
+ - [AWS Localstack](https://github.com/localstack/localstack) on ports 4567-4583
 
 The site runs on the following ports:
  - django (localhost:8000)

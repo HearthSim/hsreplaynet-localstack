@@ -17,6 +17,13 @@ services:
     ports:
       - "12111:12111"
 
+  localstack:
+    image: localstack/localstack
+    environment:
+      SERVICES: "firehose,kinesis,lambda,s3,sqs"
+    ports:
+      - "4567-4583"
+
   frontend:
     image: node:9-stretch
     command: sh -c 'yarn && yarn dev'
@@ -34,8 +41,10 @@ services:
     ports:
       - "8000:8000"
     environment:
+      AWS_DEFAULT_REGION: "us-east-1"
       DJANGO_SETTINGS_MODULE: "hsreplaynet.settings"
     depends_on:
       - db
+      - localstack
       - redis
       - stripe
