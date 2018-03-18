@@ -32,6 +32,8 @@ services:
         source: "./HSReplay.net"
         target: "/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
+    environment:
+      NODE_ENV: "development"
     ports:
       - "3000:3000"
 
