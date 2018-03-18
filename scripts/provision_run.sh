@@ -19,7 +19,4 @@ PYTHONPATH="$HSREPLAYNET" "$NODE_MODULES/webpack/bin/webpack.js" -d \
 	--env.cache \
 	--config "$HSREPLAYNET/webpack.config.js" \
 	--progress \
-	--watch &
-
-echo "Starting Django SSL server"
-python "$HSREPLAYNET/manage.py" runsslserver 0.0.0.0:8443
+	--watch
