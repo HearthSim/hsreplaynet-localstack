@@ -1,64 +1,38 @@
-# HearthSim Vagrant Box
+# HSReplay.net Local Stack
 
-[Vagrant](https://vagrantup.com) is a container runner. It allows creation and
-provisioning of reproducible virtual machines for multiple virtual "providers".
+This repository allows you to run [HSReplay.net](https://github.com/HearthSim/HSReplay.net)
+on your local machine.
 
-This is the HearthSim Vagrant Box.
-The [Vagrantfile](https://github.com/HearthSim/hearthsim-vagrant/blob/master/Vagrantfile)
-is used to configure it.
 
-## TLDR sheet
+## Dependencies
 
-* Install Vagrant, VirtualBox and Git.
-* Use `./scripts/run.sh` to set up and run the virtual machine.
-* SSH into it with `vagrant ssh`.
-* Use `vagrant destroy` to destroy the virtual machine.
+ - [Docker](https://docs.docker.com/)
+ - [Docker Compose](https://docs.docker.com/compose/)
 
-## Defaults
 
-The HearthSim box builds off the Debian Jessie x64 official Vagrant box, with
-the [VirtualBox Provider](https://www.vagrantup.com/docs/virtualbox/).
+## Setup
 
-The following ports are exposed:
+Run `./firstrun.sh` once you have docker-compose installed the first time you set up the image.
+That script will do the following:
 
-* 8000 (HTTP)
-* 8443 (HTTPS)
-* 5432 (Postgres)
+1. Clone [HSReplay.net](https://github.com/HearthSim/HSReplay.net) in the repository if it's not
+   already there. You should use that path as your workspace if you want to modify the site.
+2. Prepare and build the docker images for all the services.
+3. Set up the local database, migrate it, and feed in some initial data.
 
-All ports must be available on localhost prior to running the box.
 
-Provisioning first runs `scripts/provision_system.sh` as root to set up the
-system, then `scripts/provision_user.sh` as the unpriviledged user.
+## Services list
 
-## Installation
+The following services are available on their default ports:
 
-### Prerequisites
+ - Postgres @ db:5432
+ - Redis @ redis:6379
+ - Stripe (using [Stripe Mock](https://github.com/stripe/stripe-mock)) @ stripe:1211
 
-* [Vagrant](https://vagrantup.com) must be installed.
-* [VirtualBox](https://www.virtualbox.org) must be installed, including kernel
-  modules.
+The site runs on the following ports:
+ - django (localhost:8000)
+ - frontend (localhost:3000 for webpack-dev-server)
 
-### Provisioning
-
-The box is a runner for multiple HearthSim projects. It expects, at the very
-least, an `HSReplay.net` and `hsredshift` project directory inside of it, cloned
-from GitHub.
-
-The `scripts/run.sh` bash script is a helper which clones several HearthSim
-projects in the expected directory before attempting to run the box. You can use
-it at any time to run the system.
-
-## Management
-
-Inside the box, the `~/projects` directory is shared with the host; it is the
-same directory as the hearthsim-vagrant repository root, which also should
-contain various HearthSim repositories.
-
-To SSH into it, use `vagrant ssh`. You can at any time reprovision it with
-`vagrant up --provision`.
-
-If you want to destroy it (which you may want to do to reprovision cleanly),
-use `vagrant destroy`.
 
 ## License & Community
 

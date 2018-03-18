@@ -17,9 +17,11 @@ fi
 
 echo "Running build"
 docker-compose build
+docker-compose pull
 
 docker-compose run django /opt/hsreplay.net/source/scripts/get_vendor_static.sh
-docker-compose run django /opt/hsreplay.net/source/manage.py migrate
+docker-compose run django django-admin.py migrate
+docker-compose run django python /opt/hsreplay.net/initdb.py
 
 echo
 echo "All done. Run the following command to start:"
