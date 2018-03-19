@@ -10,6 +10,7 @@ export HSREPLAYNET=\$PROJECTDIR/HSReplay.net
 export PYTHONPATH=\$HSREPLAYNET
 export DJANGO_SETTINGS_MODULE=hsreplaynet.settings
 export HSREPLAYNET_DEBUG=1
+export AWS_DEFAULT_REGION=us-east-1
 export HISTFILE="\$HOME/.cache/zsh_history"
 export PYENV_ROOT="\$HOME/.pyenv"
 export PATH="\$PYENV_ROOT/bin:\$VIRTUAL_ENV/bin:\$NODE_MODULES/.bin:\$HOME/bin:\$PATH"
