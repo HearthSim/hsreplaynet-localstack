@@ -1,2 +1,4 @@
-HSReplay.net/.git
+HSReplay.net/.*
+HSReplay.net/node_modules
 HSReplay.net/tests/logdata
+*.pyc

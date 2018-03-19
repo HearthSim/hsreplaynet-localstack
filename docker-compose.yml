@@ -39,6 +39,7 @@ services:
 
   django:
     build: .
+    command: sh -c 'pipenv install --dev && pipenv run ./manage.py runserver 0.0.0.0:8000'
     volumes:
       - type: bind
         source: "./HSReplay.net"
@@ -47,10 +48,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      AWS_DEFAULT_REGION: "us-east-1"
-      DJANGO_SETTINGS_MODULE: "hsreplaynet.settings"
-      HSREPLAYNET_DEBUG: "1"
       PYTHONUNBUFFERED: "1"
+      PIPENV_VENV_IN_PROJECT: "1"
     depends_on:
       - db
       - localstack

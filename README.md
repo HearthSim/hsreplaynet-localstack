@@ -20,6 +20,12 @@ That script will do the following:
 2. Prepare and build the docker images for all the services.
 3. Set up the local database, migrate it, and feed in some initial data.
 
+The first time the app is run, pipenv (from the docker container) will install all the
+HSReplay.net dependencies in the `./HSReplay.net/.venv` environment. This can take several
+minutes. Because the venv is in the HSReplay.net folder, it continues to exist even if you
+destroy and recreate the container. Any changes you make to that venv, such as package
+upgrades, will persist on disk.
+
 
 ## Services list
 
