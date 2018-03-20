@@ -14,7 +14,7 @@ echo "Starting Django server"
 python "$HSREPLAYNET/manage.py" runserver 0.0.0.0:8000 &
 
 echo "Starting Webpack watcher"
-PYTHONPATH="$HSREPLAYNET" "$NODE_MODULES/webpack/bin/webpack.js" -d \
+"$NODE_MODULES/webpack/bin/webpack.js" -d \
 	--devtool cheap-module-eval-source-map \
 	--env.cache \
 	--config "$HSREPLAYNET/webpack.config.js" \
