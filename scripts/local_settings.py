@@ -1,10 +1,18 @@
+def get_docker_host_ip():
+	import subprocess
+	p = subprocess.Popen(["ip", "route"], stdout=subprocess.PIPE)
+	route = p.communicate()[0].decode().splitlines()[0]
+	assert route.startswith("default via ")
+	return route.split()[2]
+
+
 SECRET_KEY = "hunter2"
 
 DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
 
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
-INTERNAL_IPS = ["127.0.0.1", "::1", "10.0.2.2"]
+INTERNAL_IPS = ["127.0.0.1", "::1", "10.0.2.2", get_docker_host_ip()]
 
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http"
 
