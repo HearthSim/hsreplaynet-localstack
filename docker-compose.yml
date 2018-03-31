@@ -37,7 +37,7 @@ services:
 
   django:
     build: .
-    command: sh -c 'pipenv install --dev --skip-lock && pipenv run ./manage.py runserver 0.0.0.0:8000'
+    command: sh -c 'pipenv run ./manage.py runserver 0.0.0.0:8000'
     volumes:
       - "./HSReplay.net:/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
