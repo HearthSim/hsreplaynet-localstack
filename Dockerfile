@@ -1,6 +1,6 @@
 FROM python:3.6-stretch
 
-RUN apt-get update && apt-get -qy install gettext unzip
+RUN apt-get update && apt-get -qy install gettext postgresql-client unzip
 
 COPY scripts/initdb.py /opt/hsreplay.net/initdb.py
 
