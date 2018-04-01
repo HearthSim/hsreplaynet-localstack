@@ -46,6 +46,7 @@ services:
     environment:
       PYTHONUNBUFFERED: "1"
       PIPENV_VENV_IN_PROJECT: "1"
+      PGHOST: "db"
     depends_on:
       - db
       - localstack
