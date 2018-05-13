@@ -48,6 +48,7 @@ services:
       PIPENV_VENV_IN_PROJECT: "1"
       PGHOST: "db"
       XDG_CACHE_HOME: "/opt/hsreplay.net/source/.venv/.cache"
+      SHELL: "/bin/bash"
     depends_on:
       - db
       - localstack
