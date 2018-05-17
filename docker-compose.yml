@@ -44,11 +44,12 @@ services:
     ports:
       - "8000:8000"
     environment:
-      PYTHONUNBUFFERED: "1"
-      PIPENV_VENV_IN_PROJECT: "1"
       PGHOST: "db"
-      XDG_CACHE_HOME: "/opt/hsreplay.net/source/.venv/.cache"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PIPENV_VENV_IN_PROJECT: "1"
+      PYTHONUNBUFFERED: "1"
       SHELL: "/bin/bash"
+      XDG_CACHE_HOME: "/opt/hsreplay.net/source/.venv/.cache"
     depends_on:
       - db
       - localstack
