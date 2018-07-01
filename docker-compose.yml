@@ -6,6 +6,9 @@ services:
     ports:
       - "5432:5432"
 
+  redshift:
+    build: ./redshift
+
   redis:
     image: redis:3.2  # No higher than Elasticache latest
     ports:
@@ -52,6 +55,7 @@ services:
       XDG_CACHE_HOME: "/opt/hsreplay.net/source/.venv/.cache"
     depends_on:
       - db
+      - redshift
       - localstack
       - redis
       - stripe
