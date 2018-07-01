@@ -8,6 +8,8 @@ services:
 
   redshift:
     build: ./redshift
+    ports:
+      - "5439:5432"
 
   redis:
     image: redis:3.2  # No higher than Elasticache latest
