@@ -4,6 +4,9 @@ basedir="."
 
 if [[ ! -e "$basedir/HSReplay.net" ]]; then
 	git clone "git@github.com:HearthSim/HSReplay.net" "$basedir/HSReplay.net"
+fi
+
+if [[ ! -e "$basedir/HSReplay.net/locale" ]]; then
 	git clone "git@github.com:HearthSim/hsreplaynet-i18n" "$basedir/HSReplay.net/locale"
 fi
 
