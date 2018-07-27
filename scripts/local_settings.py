@@ -39,10 +39,10 @@ DATABASES = {
 
 REDSHIFT_DATABASE = {
 	"ENGINE": "postgresql",
-	"NAME": "test_hsredshift",
+	"NAME": "dev",
 	"USER": "postgres",
 	"PASSWORD": "",
-	"HOST": "localhost",
+	"HOST": "redshift",
 	"PORT": 5432,
 	"OPTIONS": {
 		"sslmode": "disable",
