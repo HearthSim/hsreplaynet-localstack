@@ -50,6 +50,15 @@ REDSHIFT_DATABASE = {
 }
 
 
+DYNAMODB_TABLES = {
+	"twitch_vod": {
+		"MODEL": "hsreplaynet.vods.models.TwitchVod",
+		"NAME": "twitch_vod",
+		"HOST": "http://localstack:4569/"
+	}
+}
+
+
 CACHES = {
 	"default": {
 		"BACKEND": "redis_lock.django_cache.RedisCache",
