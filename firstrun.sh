@@ -16,7 +16,7 @@ if [[ ! -e "$basedir/HSReplay.net/hsreplaynet/local_settings.py" ]]; then
 fi
 
 echo "Running build"
-docker-compose build
+docker-compose build --pull
 docker-compose pull
 
 docker-compose run django /opt/hsreplay.net/source/scripts/get_vendor_static.sh
