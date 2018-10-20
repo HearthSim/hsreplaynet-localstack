@@ -55,6 +55,11 @@ DYNAMODB_TABLES = {
 		"MODEL": "hsreplaynet.vods.models.TwitchVod",
 		"NAME": "twitch_vod",
 		"HOST": "http://localstack:4569/"
+	},
+        "game_replay": {
+		"MODEL": "hsreplaynet.games.models.dynamodb.GameReplay",
+		"NAME": "game_replay",
+		"HOST": "http://localstack:4569/"
 	}
 }
 
