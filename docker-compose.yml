@@ -40,6 +40,17 @@ services:
     ports:
       - "3000:3000"
 
+  storybook:
+    image: node:9-stretch
+    command: sh -c 'yarn start-storybook -h 0.0.0.0 -p 6006'
+    volumes:
+      - "./HSReplay.net:/opt/hsreplay.net/source"
+    working_dir: /opt/hsreplay.net/source
+    depends_on:
+      - frontend
+    ports:
+      - "6006:6006"
+
   django:
     build: .
     command: sh -c 'pipenv run ./manage.py runserver 0.0.0.0:8000'
