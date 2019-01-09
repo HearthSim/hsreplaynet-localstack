@@ -87,6 +87,8 @@ additional_caches = (
 	"live_stats",
 	"deck_prediction_primary",
 	"deck_prediction_replica",
+	"throttling",
+	"ilt_deck_prediction"
 )
 
 for i, c in enumerate(additional_caches):
