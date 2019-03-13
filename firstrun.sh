@@ -15,6 +15,8 @@ if [[ ! -e "$basedir/HSReplay.net/hsreplaynet/local_settings.py" ]]; then
 	cp "$basedir/scripts/local_settings.py" "$basedir/HSReplay.net/hsreplaynet/local_settings.py"
 fi
 
+mkdir -p "$basedir/HSReplay.net/build/generated/"
+
 echo "Running build"
 docker-compose build --pull
 docker-compose pull
