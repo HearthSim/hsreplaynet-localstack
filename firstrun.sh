@@ -22,7 +22,7 @@ docker-compose build --pull
 docker-compose pull
 
 docker-compose run django /opt/hsreplay.net/source/scripts/get_vendor_static.sh
-docker-compose run django pipenv install --dev --skip-lock
+docker-compose run django pipenv sync --dev
 
 echo
 echo "------------------------------------------------"
