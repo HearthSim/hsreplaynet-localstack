@@ -42,7 +42,7 @@ services:
 
   storybook:
     image: node:9-stretch
-    command: sh -c 'yarn start-storybook -h 0.0.0.0 -p 6006'
+    command: sh -c 'yarn start-storybook -h 0.0.0.0 -p 6006 -s ./hsreplaynet'
     volumes:
       - "./HSReplay.net:/opt/hsreplay.net/source"
     working_dir: /opt/hsreplay.net/source
