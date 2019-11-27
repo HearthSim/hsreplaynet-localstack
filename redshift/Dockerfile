@@ -18,7 +18,6 @@ RUN /usr/bin/python3.7 -m pip install hearthstone sqlalchemy
 
 RUN \
 	/usr/bin/python3.7 ./setup.py bdist_wheel && \
-	/usr/bin/python3.7 -m pip install ./dist/*.whl && \
-	/usr/bin/python2.7 -m pip install ./dist/*.whl
+	pip2 install --ignore-installed ./dist/*.whl
 
 COPY 10_hsredshift.sh "/docker-entrypoint-initdb.d/"
