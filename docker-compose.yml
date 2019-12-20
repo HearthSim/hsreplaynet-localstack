@@ -17,8 +17,7 @@ services:
       - "6379:6379"
 
   stripe:
-    build:
-      context: https://github.com/stripe/stripe-mock.git
+    image: stripemock/stripe-mock:latest
     ports:
       - "12111:12111"
 
