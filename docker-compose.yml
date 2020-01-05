@@ -29,7 +29,7 @@ services:
       - "4567-4583"
 
   frontend:
-    image: node:9-stretch
+    image: node:12
     command: sh -c 'yarn && yarn dev'
     volumes:
       - "./HSReplay.net:/opt/hsreplay.net/source"
@@ -40,7 +40,7 @@ services:
       - "3000:3000"
 
   storybook:
-    image: node:9-stretch
+    image: node:12
     command: sh -c 'yarn start-storybook -h 0.0.0.0 -p 6006 -s ./hsreplaynet'
     volumes:
       - "./HSReplay.net:/opt/hsreplay.net/source"
