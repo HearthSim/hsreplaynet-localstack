@@ -96,6 +96,9 @@ for i, c in enumerate(additional_caches):
 	CACHES[c]["location"] = f"redis://redis:6379/{i+2}"
 
 
+PREMIUM_PRODUCT_ID = 1
+BATTLEGROUNDS_PRODUCT_ID = 2
+
 STRIPE_LIVE_MODE = False
 STRIPE_TEST_PUBLIC_KEY = "pk_test_123"
 STRIPE_TEST_SECRET_KEY = "sk_test_123"
