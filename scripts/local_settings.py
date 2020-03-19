@@ -99,6 +99,10 @@ for i, c in enumerate(additional_caches):
 PREMIUM_PRODUCT_ID = 1
 BATTLEGROUNDS_PRODUCT_ID = 2
 
+# This is the id for the Xsolla "product" that represents the new "combo" subscription for
+# both the classic premium product and the new Battlegrounds product.
+COMBO_XSOLLA_PRODUCT_ID = 282732
+
 STRIPE_LIVE_MODE = False
 STRIPE_TEST_PUBLIC_KEY = "pk_test_123"
 STRIPE_TEST_SECRET_KEY = "sk_test_123"
