@@ -51,6 +51,11 @@ REDSHIFT_DATABASE = {
 
 
 DYNAMODB_TABLES = {
+	"battlegrounds_game_summary": {
+		"MODEL": "hsreplaynet.battlegrounds.dynamodb.BattlegroundsGameSummary",
+		"NAME": "battlegrounds_game_summary",
+		"HOST": "http://localstack:4569/"
+	},
 	"twitch_vod": {
 		"MODEL": "hsreplaynet.vods.models.TwitchVod",
 		"NAME": "twitch_vod",
