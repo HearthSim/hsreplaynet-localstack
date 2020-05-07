@@ -90,6 +90,7 @@ CACHES = {
 
 additional_caches = (
 	"live_stats",
+        "battlegrounds_game_summary",
 	"deck_prediction_primary",
 	"deck_prediction_replica",
 	"throttling",
