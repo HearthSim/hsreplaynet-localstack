@@ -108,6 +108,8 @@ BATTLEGROUNDS_PRODUCT_ID = 2
 XSOLLA_COMBO_MONTHLY_PLAN_ID = 1
 XSOLLA_COMBO_SEMIANNUAL_PLAN_ID = 2
 
+TWITCH_OAUTH_CLIENT_SECRET = "twitch-oauth-client-secret"
+
 # This is the id for the Xsolla "product" that represents the new "combo" subscription for
 # both the classic premium product and the new Battlegrounds product.
 COMBO_XSOLLA_PRODUCT_ID = 3
