@@ -158,3 +158,6 @@ JOUST_RAVEN_ENVIRONMENT = ""
 STRIPE_API_HOST = "http://stripe:12111"
 
 BATTLEGROUNDS_PREMIUM_OVERRIDE = True
+
+SQS_REPROCESSING_QUEUE_NAME = "hsreplaynet-uploads-reprocessing"
+SQS_REPROCESSING_QUEUE_URL = "https://localhost:4576/12345/hsreplaynet-uploads-reprocessing"
