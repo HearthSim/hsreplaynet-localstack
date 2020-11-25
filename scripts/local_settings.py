@@ -56,6 +56,11 @@ DYNAMODB_TABLES = {
 		"NAME": "battlegrounds_game_summary",
 		"HOST": "http://localstack:4569/"
 	},
+	"constructed_game_summary": {
+		"MODEL": "hsreplaynet.constructed.dynamodb.ConstructedGameSummary",
+		"NAME": "constructed_game_summary",
+		"HOST": "http://localstack:4569/"
+	},
 	"twitch_vod": {
 		"MODEL": "hsreplaynet.vods.models.TwitchVod",
 		"NAME": "twitch_vod",
