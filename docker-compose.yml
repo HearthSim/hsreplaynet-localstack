@@ -10,6 +10,8 @@ services:
 
   redshift:
     build: ./redshift
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
     ports:
       - "5439:5432"
 
