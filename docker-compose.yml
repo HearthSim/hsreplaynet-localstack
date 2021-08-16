@@ -52,6 +52,16 @@ services:
     ports:
       - "6006:6006"
 
+  hsreplaynet-api-proxy:
+    env_file: .env
+    image: node:12
+    command: sh -c "yarn && yarn run proxy ${HSREPLAYNET_SESSIONID} -p 8080"
+    volumes:
+      - "./hsreplaynet-dev-proxy:/opt/hsreplaynet-dev-proxy"
+    working_dir: /opt/hsreplaynet-dev-proxy
+    ports:
+      - "8080:8080"
+
   django:
     build: .
     command: sh -c 'pipenv run ./manage.py runserver 0.0.0.0:8000'
@@ -74,3 +84,4 @@ services:
       - localstack
       - redis
       - stripe
+      - hsreplaynet-api-proxy

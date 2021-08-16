@@ -15,6 +15,16 @@ if [[ ! -e "$basedir/HSReplay.net/hsreplaynet/local_settings.py" ]]; then
 	cp "$basedir/scripts/local_settings.py" "$basedir/HSReplay.net/hsreplaynet/local_settings.py"
 fi
 
+if [[ ! -e "$basedir/hsreplaynet-dev-proxy" ]]; then
+	git clone "git@github.com:HearthSim/hsreplaynet-dev-proxy.git" "$basedir/hsreplaynet-dev-proxy"
+fi
+
+if [[ ! -e "$basedir/.env" ]]; then
+	echo "HSREPLAYNET_SESSIONID=your_sessionid_here" >> $basedir/.env
+fi
+
+
+
 mkdir -p "$basedir/HSReplay.net/build/generated/"
 
 echo "Running build"
