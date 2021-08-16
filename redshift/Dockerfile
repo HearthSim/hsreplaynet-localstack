@@ -2,7 +2,7 @@ FROM hearthsim/pgredshift:latest
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl
 
-RUN curl -O https://libs.hearthsim.net/hsredshift-0.1.0.tar.gz && \
+RUN curl -O https://libs.hearthsim.net/hsredshift-0.1.0.tar.gz --fail && \
 	mkdir /tmp/hsredshift && tar -xzf hsredshift-0.1.0.tar.gz -C /tmp/hsredshift --strip 1
 
 RUN apt-get install -y --no-install-recommends build-essential python3-dev libpq-dev
