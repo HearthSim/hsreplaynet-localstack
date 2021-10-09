@@ -166,3 +166,21 @@ BATTLEGROUNDS_PREMIUM_OVERRIDE = True
 
 SQS_REPROCESSING_QUEUE_NAME = "hsreplaynet-uploads-reprocessing"
 SQS_REPROCESSING_QUEUE_URL = "https://localhost:4576/12345/hsreplaynet-uploads-reprocessing"
+
+UNTAPPED_QUERY_CATALOGUES = {
+	"mercenaries": {
+		"executor": {
+			"BACKEND":
+				"untapped.query.django.execution.DefaultSynchronousQueryExecutorConfiguration",
+			"DIALECT": "postgresql",
+			"NAME": "postgres",
+			"HOST": "db",
+			"PORT": "5432",
+			"USER": "postgres",
+			"PASSWORD": ""
+		},
+		"store": {
+			"BACKEND": "untapped.query.django.storage.LocMemQueryResultStoreBackend"
+		}
+	}
+}
