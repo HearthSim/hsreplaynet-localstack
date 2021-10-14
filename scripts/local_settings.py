@@ -26,6 +26,14 @@ DATABASES = {
 		"HOST": "db",
 		"PORT": "",
 	},
+	"mercenaries": {
+		"ENGINE": "django.db.backends.postgresql",
+		"NAME": "postgres",
+		"USER": "postgres",
+		"PASSWORD": "",
+		"HOST": "db",
+		"PORT": "",
+	},
 	"uploads": {
 		"ENGINE": "django.db.backends.postgresql",
 		"NAME": "postgres",
