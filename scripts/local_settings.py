@@ -31,7 +31,7 @@ DATABASES = {
 		"NAME": "postgres",
 		"USER": "postgres",
 		"PASSWORD": "",
-		"HOST": "db",
+		"HOST": "mercenariesdb",
 		"PORT": "",
 	},
 	"uploads": {
