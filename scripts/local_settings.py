@@ -194,4 +194,4 @@ UNTAPPED_QUERY_CATALOGUES = {
 }
 
 QUERY_REFRESH_SQS_QUEUE_URL = \
-	"https://sqs.us-east-1.amazonaws.com/746159132190/hsreplaynet-mercenaries-query-refresh"
+	"https://localhost:4576/12345/hsreplaynet-mercenaries-query-refresh"
