@@ -196,3 +196,6 @@ UNTAPPED_QUERY_CATALOGUES = {
 
 QUERY_REFRESH_SQS_QUEUE_URL = \
 	"https://localhost:4576/12345/hsreplaynet-mercenaries-query-refresh"
+
+YOUTUBE_API_KEY = "123456789abcdef"
+YOUTUBE_REFERRAL_LINK_DOMAINS = ["hsreplay.net", "www.hsreplay.net"]
