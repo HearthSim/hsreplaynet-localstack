@@ -4,7 +4,7 @@ RUN apt-get update && apt-get -qy install gettext postgresql-client unzip
 
 COPY scripts/initdb.py /opt/hsreplay.net/initdb.py
 
-RUN pip install --upgrade pip wheel setuptools pipenv
+RUN pip install --upgrade pip==21.3.1 wheel setuptools pipenv==2022.1.8
 
 ENV PYTHONPATH=/opt/hsreplay.net/source \
 	DJANGO_SETTINGS_MODULE=hsreplaynet.settings \
