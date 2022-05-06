@@ -1,4 +1,4 @@
-FROM python:3.6-stretch
+FROM python:3.9-buster
 
 RUN apt-get update && apt-get -qy install gettext postgresql-client unzip
 
