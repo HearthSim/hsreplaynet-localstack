@@ -43,17 +43,6 @@ services:
     ports:
       - "3000:3000"
 
-  storybook:
-    image: node:12
-    command: sh -c 'yarn start-storybook -h 0.0.0.0 -p 6006 -s ./hsreplaynet'
-    volumes:
-      - "./HSReplay.net:/opt/hsreplay.net/source"
-    working_dir: /opt/hsreplay.net/source
-    depends_on:
-      - frontend
-    ports:
-      - "6006:6006"
-
   hsreplaynet-api-proxy:
     env_file: .env
     image: node:12
