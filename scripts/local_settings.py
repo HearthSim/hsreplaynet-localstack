@@ -178,6 +178,7 @@ SQS_BATTLEGROUNDS_PROCESSING_QUEUE_URL = \
         "https://localhost:4576/12345/hsreplaynet-battlegrounds-processing"
 SQS_MERCENARIES_PROCESSING_QUEUE_URL = \
         "https://localhost:4576/12345/hsreplaynet-mercenaries-processing"
+SQS_PROCESSING_QUEUE_URL = "https://localhost:4576/12345/hsreplaynet-uploads-processing"
 SQS_REPROCESSING_QUEUE_NAME = "hsreplaynet-uploads-reprocessing"
 SQS_REPROCESSING_QUEUE_URL = "https://localhost:4576/12345/hsreplaynet-uploads-reprocessing"
 
