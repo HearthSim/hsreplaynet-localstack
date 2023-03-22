@@ -1,4 +1,4 @@
-FROM hearthsim/pgredshift:latest
+FROM ghcr.io/hearthsim/docker-pgredshift:latest
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl
 
