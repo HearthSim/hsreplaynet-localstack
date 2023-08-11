@@ -2,7 +2,7 @@ version: "3"
 
 services:
   db:
-    image: postgres:14
+    image: postgres:14-bullseye
     environment:
       POSTGRES_HOST_AUTH_METHOD: "trust"
     ports:
