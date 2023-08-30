@@ -33,7 +33,7 @@ services:
       - "4567-4583"
 
   frontend:
-    image: node:12
+    image: node:14
     command: sh -c 'yarn && yarn dev'
     volumes:
       - "./HSReplay.net:/opt/hsreplay.net/source"
