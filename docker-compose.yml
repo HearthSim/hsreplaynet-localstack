@@ -16,7 +16,7 @@ services:
       - "5439:5432"
 
   redis:
-    image: redis:3.2  # No higher than Elasticache latest
+    image: redis:6.2  # No higher than Elasticache latest
     ports:
       - "6379:6379"
 
